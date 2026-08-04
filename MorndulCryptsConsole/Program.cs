@@ -1,3 +1,27 @@
 ﻿using System;
+using static System.Console;
 
-Console.WriteLine("Hello, World!");
+
+namespace MorndulCryptsConsole
+{
+    class Program
+    {
+
+
+
+
+        // Methods
+        static void Main(string[] args)
+        {
+            Title = "~|Crypts of Morn'Dul|~";
+
+            WriteLine("Hello, World!");
+            ReadLine();
+
+        }
+    }
+}
+
+
+
+
