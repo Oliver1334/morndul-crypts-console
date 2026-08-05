@@ -7,7 +7,7 @@ using static System.Console;
 
 namespace TextBasedAdventure
 {
-    static class ArtAssets
+    internal static class ArtAssets
     {
         //Fields
         public static string Title = @"
