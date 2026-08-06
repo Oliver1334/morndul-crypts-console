@@ -6,7 +6,8 @@ namespace MorndulCryptsConsole
 {
     class Program
     {
-
+        //Fields
+        public static bool mainLoop = true;
 
 
 
@@ -15,8 +16,8 @@ namespace MorndulCryptsConsole
         {
             Title = "~|Crypts of Morn'Dul|~";
 
-            WriteLine("Hello, World!");
-            ReadLine();
+            Game myGame = new Game();
+            myGame.Start();
 
         }
     }
