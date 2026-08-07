@@ -17,68 +17,156 @@ namespace MorndulCryptsConsole
             ArtAssets.FormatTitle();
             TextAnimationUtils.AnimateTyping("What is your name: ");
             currentPlayer.name = ReadLine();
-
-            WriteLine("");
-            TextAnimationUtils.AnimateTyping(@"Choose a class: 
-");
-
-            ForegroundColor = ConsoleColor.DarkRed;
-            TextAnimationUtils.AnimateTyping(@"Barbarian ");
-            ResetColor();
-            ForegroundColor = ConsoleColor.DarkCyan;
-            TextAnimationUtils.AnimateTyping(@"Cleric ");
-            ResetColor();
-            ForegroundColor = ConsoleColor.DarkYellow;
-            TextAnimationUtils.AnimateTyping(@"Thief ");
-            ResetColor();
-            WriteLine("");
             WriteLine("");
 
+            bool showClassOptions = true;
             bool classChosen = false;
             while (classChosen == false)
             {
+                if (showClassOptions)
+                {
+                TextAnimationUtils.AnimateTyping(@"Choose a class: 
+");
+
+                ForegroundColor = ConsoleColor.DarkRed;
+                TextAnimationUtils.AnimateTyping(@"Barbarian ");
+                ResetColor();
+                ForegroundColor = ConsoleColor.DarkCyan;
+                TextAnimationUtils.AnimateTyping(@"Cleric ");
+                ResetColor();
+                ForegroundColor = ConsoleColor.DarkYellow;
+                TextAnimationUtils.AnimateTyping(@"Thief ");
+                ResetColor();
+                WriteLine("");
+                WriteLine("");
+                }
+
                 string input = ReadLine().Trim().ToUpper();
                 if (input == "BARBARIAN")
                 {
-                    currentPlayer.currentClass = Player.PlayerClass.Barbarian;
-                    classChosen = true;
 
                     Clear();
-                    WriteLine("You have chosen Barbarian!");
                     ForegroundColor = ConsoleColor.DarkRed;
-                    WriteLine(ArtAssets.Barbarian);
+                    WriteLine("Barbarian class and abilities description goes here");
                     ResetColor();
-                    ReadKey(true);
+                    WriteLine("Are you certain you want to choose this class? (Y)es/(N)o");
+                    
+                    while (true)
+                    {
+                    string confirmation = ReadLine().Trim().ToUpper();
+                    if(confirmation == "Y" || confirmation == "YES")
+                    {
+                        currentPlayer.currentClass = Player.PlayerClass.Barbarian;
+                        classChosen = true;
+
+                        Clear();
+                        WriteLine("You have chosen Barbarian!");
+                        ForegroundColor = ConsoleColor.DarkRed;
+                        WriteLine(ArtAssets.Barbarian);
+                        ResetColor();
+                        ReadKey(true);
+                            break;
+                    } else if(confirmation == "N" || confirmation == "NO")
+                    {
+                            showClassOptions = true;
+                            Clear();
+                            break;
+                    } else
+                    {
+                            WriteLine("Invalid input, try again!");
+                    }
+                    }
+                    
                 }
                 else if (input == "CLERIC")
                 {
-                    currentPlayer.currentClass = Player.PlayerClass.Cleric;
-                    classChosen = true;
 
                     Clear();
-                    WriteLine("You have chosen Cleric!");
                     ForegroundColor = ConsoleColor.DarkCyan;
-                    WriteLine(ArtAssets.Barbarian);
+                    WriteLine("Cleric class and abilities description goes here");
                     ResetColor();
-                    ReadKey(true);
+                    WriteLine("Are you certain you want to choose this class? (Y)es/(N)o");
+
+                    while (true)
+                    {
+                        string confirmation = ReadLine().Trim().ToUpper();
+                        if (confirmation == "Y" || confirmation == "YES")
+                        {
+                            currentPlayer.currentClass = Player.PlayerClass.Cleric;
+                            classChosen = true;
+
+                            Clear();
+                            WriteLine("You have chosen Cleric!");
+                            ForegroundColor = ConsoleColor.DarkCyan;
+                            WriteLine(ArtAssets.Barbarian);
+                            ResetColor();
+                            ReadKey(true);
+                            break;
+                        }
+                        else if (confirmation == "N" || confirmation == "NO")
+                        {
+                            showClassOptions = true;
+                            Clear();
+                            break;
+                        }
+                        else
+                        {
+                            WriteLine("Invalid input, try again!");
+                        }
+                    }
                 }
                 else if (input == "THIEF")
                 {
-                    currentPlayer.currentClass = Player.PlayerClass.Thief;
-                    classChosen = true;
 
                     Clear();
-                    WriteLine("You have chosen Thief!");
                     ForegroundColor = ConsoleColor.DarkYellow;
-                    WriteLine(ArtAssets.Barbarian);
+                    WriteLine("Thief class and abilities description goes here");
                     ResetColor();
-                    ReadKey(true);
+                    WriteLine("Are you certain you want to choose this class? (Y)es/(N)o");
+
+                    while (true)
+                    {
+                        string confirmation = ReadLine().Trim().ToUpper();
+                        if (confirmation == "Y" || confirmation == "YES")
+                        {
+                            currentPlayer.currentClass = Player.PlayerClass.Thief;
+                            classChosen = true;
+
+                            Clear();
+                            WriteLine("You have chosen Thief!");
+                            ForegroundColor = ConsoleColor.DarkYellow;
+                            WriteLine(ArtAssets.Barbarian);
+                            ResetColor();
+                            ReadKey(true);
+                            break;
+                        }
+                        else if (confirmation == "N" || confirmation == "NO")
+                        {
+                            showClassOptions = true;
+                            Clear();
+                            break;
+                        }
+                        else
+                        {
+                            WriteLine("Invalid input, try again!");
+                        }
+                    }
                 }
                 else
                 {
                     WriteLine("Please choose a valid class!");
+                    showClassOptions = false;
                 }
             }
+
+
+
+
+
+
+
+
+
 
             //Game Intro Sequence
             Clear();
