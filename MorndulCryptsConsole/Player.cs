@@ -36,7 +36,7 @@ namespace MorndulCryptsConsole
 
         public int GetPower()
         {
-            int upper = (15 * mods + 50);
+            int upper = (2 * mods + 2);
             int lower = (mods + 1);
             return rand.Next(lower, upper);
         }
