@@ -5,7 +5,7 @@ using static System.Console;
 
 
 
-namespace TextBasedAdventure
+namespace MorndulCryptsConsole
 {
     internal static class ArtAssets
     {
