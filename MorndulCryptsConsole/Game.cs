@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
-using TextBasedAdventure;
 using static System.Console;
 
 namespace MorndulCryptsConsole
@@ -38,7 +37,6 @@ namespace MorndulCryptsConsole
                 TextAnimationUtils.AnimateTyping(@"Thief ");
                 ResetColor();
                 WriteLine("");
-                WriteLine("");
                 }
 
                 string input = ReadLine().Trim().ToUpper();
@@ -60,8 +58,8 @@ namespace MorndulCryptsConsole
                         classChosen = true;
 
                         Clear();
-                        WriteLine("You have chosen Barbarian!");
                         ForegroundColor = ConsoleColor.DarkRed;
+                        WriteLine("You have chosen Barbarian!");
                         WriteLine(ArtAssets.Barbarian);
                         ResetColor();
                         ReadKey(true);
@@ -96,8 +94,8 @@ namespace MorndulCryptsConsole
                             classChosen = true;
 
                             Clear();
-                            WriteLine("You have chosen Cleric!");
                             ForegroundColor = ConsoleColor.DarkCyan;
+                            WriteLine("You have chosen Cleric!");
                             WriteLine(ArtAssets.Barbarian);
                             ResetColor();
                             ReadKey(true);
@@ -133,8 +131,8 @@ namespace MorndulCryptsConsole
                             classChosen = true;
 
                             Clear();
-                            WriteLine("You have chosen Thief!");
                             ForegroundColor = ConsoleColor.DarkYellow;
+                            WriteLine("You have chosen Thief!");
                             WriteLine(ArtAssets.Barbarian);
                             ResetColor();
                             ReadKey(true);
@@ -158,15 +156,6 @@ namespace MorndulCryptsConsole
                     showClassOptions = false;
                 }
             }
-
-
-
-
-
-
-
-
-
 
             //Game Intro Sequence
             Clear();

@@ -41,6 +41,13 @@ namespace MorndulCryptsConsole
             return rand.Next(lower, upper);
         }
 
+        public int GetGold()
+        {
+            int upper = (15 * mods + 50);
+            int lower = (10 * mods + 10);
+            return rand.Next(lower, upper);
+        }
+
         public int GetXp()
         {
             int upper = (15 * mods + 50);
