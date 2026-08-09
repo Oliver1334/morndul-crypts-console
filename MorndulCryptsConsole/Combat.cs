@@ -113,7 +113,7 @@ namespace MorndulCryptsConsole
                         WriteLine($"You use your crazy ninja moves to evade the {nameEnemy} and you successfully escape!");
                         ReadKey(true);
                         //go to store
-                        Shop.LoadShop(Game.currentPlayer);
+                        //Shop.LoadShop(Game.currentPlayer);
                     }
                 }
                 else if (input == "H" || input == "HEAL")

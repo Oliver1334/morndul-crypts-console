@@ -18,6 +18,11 @@ namespace MorndulCryptsConsole
 
             Game myGame = new Game();
             myGame.Start();
+            Encounters.FirstEncounter();
+            while (mainLoop)
+            {
+                Encounters.RandomEncounter();
+            }
 
         }
     }
