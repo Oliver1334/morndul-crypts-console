@@ -57,6 +57,7 @@ namespace MorndulCryptsConsole
             }
         };
 
+        public string art;
         public int health;
         public int maxHealth;
         public int attack;
