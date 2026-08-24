@@ -21,7 +21,14 @@ namespace MorndulCryptsConsole
 
         public static void BasicFightEncounter()
         {
-            Enemy porkman = Enemy.MakePorkMan(10, 10, 3, 20);
+            int health = rand.Next(4, 8);
+            int attack = rand.Next(2, 4);
+            int gold = rand.Next(1, 6);
+
+
+
+
+            Enemy porkman = Enemy.MakePorkMan(health, health, attack, gold);
             Clear();
             WriteLine(porkman.combatLines[Game.currentPlayer.currentClass.ToString()]["IntroLines"][0]);
             ReadKey();
