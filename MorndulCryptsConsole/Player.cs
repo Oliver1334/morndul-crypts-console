@@ -28,16 +28,9 @@ namespace MorndulCryptsConsole
 
         //Methods
 
-        public int GetXp()
-        {
-            int upper = (15 * mods + 50);
-            int lower = (15 * mods + 10);
-            return rand.Next(lower, upper);
-        }
-
         public int GetLevelUpValue()
         {
-            return 100 * level + 400;
+            return 30 * level + 20;
         }
 
         public bool CanLevelUp()

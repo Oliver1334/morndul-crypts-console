@@ -24,11 +24,12 @@ namespace MorndulCryptsConsole
             int health = rand.Next(4, 8);
             int attack = rand.Next(2, 4);
             int gold = rand.Next(1, 6);
+            int xp = rand.Next(12, 19);
 
 
 
 
-            Enemy porkman = Enemy.MakePorkMan(health, health, attack, gold);
+            Enemy porkman = Enemy.MakePorkMan(health, health, attack, gold, xp);
             Clear();
             WriteLine(porkman.combatLines[Game.currentPlayer.currentClass.ToString()]["IntroLines"][0]);
             ReadKey();

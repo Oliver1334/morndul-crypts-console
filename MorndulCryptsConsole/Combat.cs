@@ -144,12 +144,12 @@ namespace MorndulCryptsConsole
                 ReadKey(true);
             }
          
-            int experience = Game.currentPlayer.GetXp();
+            
             List<string> victoryLines = enemy.combatLines[Game.currentPlayer.currentClass.ToString()]["VictoryLines"];
             WriteLine(victoryLines[rand.Next(victoryLines.Count)]);
-            WriteLine($"As you stand victorious over the {enemy.stageOneName}, its body dissolves into {enemy.gold} gold coins! You have gained {experience}XP!");
+            WriteLine($"As you stand victorious over the {enemy.stageOneName}, its body dissolves into {enemy.gold} gold coins! You have gained {enemy.xp}XP!");
             Game.currentPlayer.gold += enemy.gold;
-            Game.currentPlayer.xp += experience;
+            Game.currentPlayer.xp += enemy.xp;
 
             if (Game.currentPlayer.CanLevelUp())
                 Game.currentPlayer.LevelUp();

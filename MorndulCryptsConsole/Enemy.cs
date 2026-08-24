@@ -21,6 +21,7 @@ namespace MorndulCryptsConsole
         public int health;
         public int maxHealth;
         public int attack;
+        public int xp;
         public int gold;
 
 
@@ -31,7 +32,7 @@ namespace MorndulCryptsConsole
 
 
 
-        public static Enemy MakePorkMan(int health, int maxHealth, int attack, int gold)
+        public static Enemy MakePorkMan(int health, int maxHealth, int attack, int gold, int xp)
         {
             Enemy porkman = new Enemy();
             porkman.stageOneName = "PorkMan Grunt";
@@ -94,6 +95,7 @@ namespace MorndulCryptsConsole
             porkman.maxHealth = maxHealth;
             porkman.attack = attack;
             porkman.gold = gold;
+            porkman.xp = xp;
 
             return porkman;
         }
