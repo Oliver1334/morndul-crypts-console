@@ -21,7 +21,7 @@ namespace MorndulCryptsConsole
             
             while (mainLoop)
             {
-                Encounters.BasicFightEncounter();
+                Encounters.StageOneEncounter();
             }
 
         }
