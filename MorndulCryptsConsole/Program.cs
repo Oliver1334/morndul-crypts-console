@@ -7,7 +7,7 @@ namespace MorndulCryptsConsole
     class Program
     {
         //Fields
-        public static bool mainLoop = true;
+        public static bool gameNotOver = true;
 
 
 
@@ -19,9 +19,17 @@ namespace MorndulCryptsConsole
             Game myGame = new Game();
             myGame.Start();
             
-            while (mainLoop)
+            while (gameNotOver)
             {
-                Encounters.StageOneEncounter();
+                if (Game.currentStage == 1) { Encounters.StageOneEncounter(); }
+                //else if (Game.currentStage == 2) { Encounters.StageTwoEncounter(); }
+                //else if (Game.currentStage == 3) { Encounters.StageThreeEncounter(); }
+                
+                if (Game.currentPlayer.level == 5) { Game.currentStage = 2; }
+                else if (Game.currentPlayer.level == 10) { Game.currentStage = 3; }
+
+                WriteLine($"DEBUG: stage {Game.currentStage}, level {Game.currentPlayer.level}");
+                ReadKey();
             }
 
         }

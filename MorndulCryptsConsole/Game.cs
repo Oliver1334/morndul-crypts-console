@@ -9,6 +9,7 @@ namespace MorndulCryptsConsole
     {
         //Fields
         public static Player currentPlayer = new Player();
+        public static int currentStage = 1;
 
         //Methods
         public void Start()
