@@ -10,15 +10,11 @@ namespace MorndulCryptsConsole
         //Fields
         public int minHealth;
         public int maxHealth;
-
         public int minAttack;
-
         public int maxAttack;
         public int minGold;
-
         public int maxGold;
         public int minExp;
-
         public int maxExp;
         
 
