@@ -85,18 +85,23 @@ namespace MorndulCryptsConsole
                     enemy = Enemy.MakePorkMan(health, health, attack, gold, xp);
                     break;
                 case "Spider":
-                    enemy = Enemy.MakePorkMan(health, health, attack, gold, xp);
+                    enemy = Enemy.MakeSpider(health, health, attack, gold, xp);
                     break;
                 case "Skeleton":
-                    enemy = Enemy.MakePorkMan(health, health, attack, gold, xp);
+                    enemy = Enemy.MakeSkeleton(health, health, attack, gold, xp);
                     break;
                 case "Necromancer":
-                    enemy = Enemy.MakePorkMan(health, health, attack, gold, xp);
+                    enemy = Enemy.MakeNecromancer(health, health, attack, gold, xp);
                     break;
                 default:
                     enemy = Enemy.MakePorkMan(health, health, attack, gold, xp);
                     break;
             }
+
+            Clear();
+            WriteLine(enemy.combatLines[Game.currentPlayer.currentClass.ToString()]["IntroLines"][0]);
+            ReadKey();
+            Combat.CombatLoop(enemy);
 
         }
 
