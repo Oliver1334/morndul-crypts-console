@@ -161,6 +161,142 @@ namespace MorndulCryptsConsole
             return spider;
         }
 
+        public static Enemy MakeSkeleton(int health, int maxHealth, int attack, int gold, int xp)
+        {
+            Enemy skeleton = new Enemy();
+            skeleton.stageOneName = "lesser skeleton";
+            skeleton.stageTwoName = "Angry skeleton";
+            skeleton.stageThreeName = "Evil Dead";
+            skeleton.enemyType = Enemy.EnemyType.Undead;
+
+            skeleton.combatLines = new Dictionary<string, Dictionary<string, List<string>>>
+        {
+            {  "Barbarian", new Dictionary<string, List<string>>
+                {
+                    { "IntroLines", new List<string> {"skeleton Barbarian IntroLine text" } },
+                    { "AttackLines", new List<string> { "skeleton Barbarian Attack Line one", "skeleton Barbarian Attack Line Two", "skeleton Barbarian Attack Line Three" } },
+                    { "SpecialAttackLines", new List<string> {"Special Attack Line one", "Special Attack Line Two", "Special Attack Line Three"} },
+                    { "DefendLines", new List<string> { "skeleton Barbarian Defend Line one" } },
+                    { "HealSuccessLines", new List<string> { "skeleton Barbarian Heal Success Line one" } },
+                    { "HealFailLines", new List<string> { "skeleton Barbarian Heal Fail Line one" } },
+                    { "RunSuccessLines", new List<string> { "skeleton Barbarian Run Success Line one" } },
+                    { "RunFailLines", new List<string> { "skeleton Barbarian Run Fail Line one" } },
+                    { "DefeatLines", new List<string> { "skeleton Barbarian Defeat Line one" } },
+                    { "VictoryLines", new List<string> { "skeleton Barbarian Victory Line one" } },
+
+                }
+            },
+            {  "Cleric", new Dictionary<string, List<string>>
+                {
+                    { "IntroLines", new List<string> { "skeleton Cleric IntroLine text" } },
+                    { "AttackLines", new List<string> { "skeleton Cleric Attack Line one", "skeleton Cleric Attack Line Two", "skeleton Cleric Attack Line Three" } },
+                    { "SpecialAttackLines", new List<string> {"Special Attack Line one", "Special Attack Line Two", "Special Attack Line Three"} },
+                    { "DefendLines", new List<string> { "skeleton Cleric Defend Line one" } },
+                    { "HealSuccessLines", new List<string> { "skeleton Cleric Heal Success Line one" } },
+                    { "HealFailLines", new List<string> { "skeleton Cleric Heal Fail Line one" } },
+                    { "RunSuccessLines", new List<string> { "skeleton Cleric Run Success Line one" } },
+                    { "RunFailLines", new List<string> { "skeleton Cleric Run Fail Line one" } },
+                    { "DefeatLines", new List<string> { "skeleton Cleric Defeat Line one" } },
+                    { "VictoryLines", new List<string> { "skeleton Cleric Victory Line one" } },
+
+                }
+            },
+            {  "Thief", new Dictionary<string, List<string>>
+                {
+                    { "IntroLines", new List<string> { "skeleton Thief IntroLine text" } },
+                    { "AttackLines", new List<string> { "skeleton Thief Attack Line one", "skeleton Thief Attack Line Two", "skeleton Thief Attack Line Three" } },
+                    { "SpecialAttackLines", new List<string> {"Special Attack Line one", "Special Attack Line Two", "Special Attack Line Three"} },
+                    { "DefendLines", new List<string> { "skeleton Thief Defend Line one" } },
+                    { "HealSuccessLines", new List<string> { "skeleton Thief Heal Success Line one" } },
+                    { "HealFailLines", new List<string> { "skeleton Thief Heal Fail Line one" } },
+                    { "RunSuccessLines", new List<string> { "skeleton Thief Run Success Line one" } },
+                    { "RunFailLines", new List<string> { "skeleton Thief Run Fail Line one" } },
+                    { "DefeatLines", new List<string> { "skeleton Thief Defeat Line one" } },
+                    { "VictoryLines", new List<string> { "skeleton Thief Victory Line one" } },
+
+                }
+            }
+        };
+
+            skeleton.art = ArtAssets.PorkMan;
+            skeleton.colour = ConsoleColor.Gray;
+            skeleton.health = health;
+            skeleton.maxHealth = maxHealth;
+            skeleton.attack = attack;
+            skeleton.gold = gold;
+            skeleton.xp = xp;
+
+            return skeleton;
+        }
+
+        public static Enemy MakeNecromancer(int health, int maxHealth, int attack, int gold, int xp)
+        {
+            Enemy necromancer = new Enemy();
+            necromancer.stageOneName = "Necromancer";
+            necromancer.stageTwoName = "Necromancer";
+            necromancer.stageThreeName = "Necromancer";
+            necromancer.enemyType = Enemy.EnemyType.Humanoid;
+
+            necromancer.combatLines = new Dictionary<string, Dictionary<string, List<string>>>
+        {
+            {  "Barbarian", new Dictionary<string, List<string>>
+                {
+                    { "IntroLines", new List<string> {"necromancer Barbarian IntroLine text" } },
+                    { "AttackLines", new List<string> { "necromancer Barbarian Attack Line one", "necromancer Barbarian Attack Line Two", "necromancer Barbarian Attack Line Three" } },
+                    { "SpecialAttackLines", new List<string> {"Special Attack Line one", "Special Attack Line Two", "Special Attack Line Three"} },
+                    { "DefendLines", new List<string> { "necromancer Barbarian Defend Line one" } },
+                    { "HealSuccessLines", new List<string> { "necromancer Barbarian Heal Success Line one" } },
+                    { "HealFailLines", new List<string> { "necromancer Barbarian Heal Fail Line one" } },
+                    { "RunSuccessLines", new List<string> { "necromancer Barbarian Run Success Line one" } },
+                    { "RunFailLines", new List<string> { "necromancer Barbarian Run Fail Line one" } },
+                    { "DefeatLines", new List<string> { "necromancer Barbarian Defeat Line one" } },
+                    { "VictoryLines", new List<string> { "necromancer Barbarian Victory Line one" } },
+
+                }
+            },
+            {  "Cleric", new Dictionary<string, List<string>>
+                {
+                    { "IntroLines", new List<string> { "necromancer Cleric IntroLine text" } },
+                    { "AttackLines", new List<string> { "necromancer Cleric Attack Line one", "necromancer Cleric Attack Line Two", "necromancer Cleric Attack Line Three" } },
+                    { "SpecialAttackLines", new List<string> {"Special Attack Line one", "Special Attack Line Two", "Special Attack Line Three"} },
+                    { "DefendLines", new List<string> { "necromancer Cleric Defend Line one" } },
+                    { "HealSuccessLines", new List<string> { "necromancer Cleric Heal Success Line one" } },
+                    { "HealFailLines", new List<string> { "necromancer Cleric Heal Fail Line one" } },
+                    { "RunSuccessLines", new List<string> { "necromancer Cleric Run Success Line one" } },
+                    { "RunFailLines", new List<string> { "necromancer Cleric Run Fail Line one" } },
+                    { "DefeatLines", new List<string> { "necromancer Cleric Defeat Line one" } },
+                    { "VictoryLines", new List<string> { "necromancer Cleric Victory Line one" } },
+
+                }
+            },
+            {  "Thief", new Dictionary<string, List<string>>
+                {
+                    { "IntroLines", new List<string> { "necromancer Thief IntroLine text" } },
+                    { "AttackLines", new List<string> { "necromancer Thief Attack Line one", "necromancer Thief Attack Line Two", "necromancer Thief Attack Line Three" } },
+                    { "SpecialAttackLines", new List<string> {"Special Attack Line one", "Special Attack Line Two", "Special Attack Line Three"} },
+                    { "DefendLines", new List<string> { "necromancer Thief Defend Line one" } },
+                    { "HealSuccessLines", new List<string> { "necromancer Thief Heal Success Line one" } },
+                    { "HealFailLines", new List<string> { "necromancer Thief Heal Fail Line one" } },
+                    { "RunSuccessLines", new List<string> { "necromancer Thief Run Success Line one" } },
+                    { "RunFailLines", new List<string> { "necromancer Thief Run Fail Line one" } },
+                    { "DefeatLines", new List<string> { "necromancer Thief Defeat Line one" } },
+                    { "VictoryLines", new List<string> { "necromancer Thief Victory Line one" } },
+
+                }
+            }
+        };
+
+            necromancer.art = ArtAssets.PorkMan;
+            necromancer.colour = ConsoleColor.Blue;
+            necromancer.health = health;
+            necromancer.maxHealth = maxHealth;
+            necromancer.attack = attack;
+            necromancer.gold = gold;
+            necromancer.xp = xp;
+
+            return necromancer;
+        }
+
 
 
 
