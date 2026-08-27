@@ -1,5 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Reflection;
+using System.Runtime.InteropServices;
 using System.Text;
 using static System.Console;
 
@@ -15,6 +17,33 @@ namespace MorndulCryptsConsole
             { 1, new List<string> {"PorkMan", "Spider"} },
             { 2, new List<string> {"PorkMan", "Spider", "Skeleton"} },
             { 3, new List<string> {"PorkMan", "Spider", "Skeleton", "Necromancer"} }
+        };
+
+        public static Dictionary<int, Dictionary<string, EnemyStatRanges>> enemyStatTable = new Dictionary<int, Dictionary<string, EnemyStatRanges>>
+        {
+            {1, new Dictionary<string, EnemyStatRanges>
+                {
+                    {"PorkMan", new EnemyStatRanges(4,8,2,5,1,6,12,19) },
+                    {"Spider", new EnemyStatRanges(11,14,1,3,1,6,12,19) }
+                }
+            },
+            {2, new Dictionary<string, EnemyStatRanges>
+                {
+                    {"PorkMan", new EnemyStatRanges(4,8,2,4,1,6,12,19) },
+                    {"Spider", new EnemyStatRanges(11,14,1,3,1,6,12,19) },
+                    {"Skeleton", new EnemyStatRanges(2,5,2,4,1,6,12,19) }
+
+                } 
+            },
+            {3, new Dictionary<string, EnemyStatRanges>
+                {
+                    {"PorkMan", new EnemyStatRanges(4,8,2,4,1,6,12,19) },
+                    {"Spider", new EnemyStatRanges(11,14,1,3,1,6,12,19) },
+                    {"Skeleton", new EnemyStatRanges(2,5,2,4,1,6,12,19) },
+                    {"Necromancer", new EnemyStatRanges(1,4,6,10,1,6,12,19) }
+
+                }
+            }
         };
 
         //Methods
@@ -35,6 +64,8 @@ namespace MorndulCryptsConsole
         //    ReadKey();
         //    Combat.CombatLoop(porkman);
         //}
+
+
 
         public static void StageOneEncounter()
         {
