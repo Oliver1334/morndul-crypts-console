@@ -10,6 +10,13 @@ namespace MorndulCryptsConsole
         //Fields
         static Random rand = new Random();
 
+        public static Dictionary<int, List<string>> enemyPools = new Dictionary<int, List<string>>
+        {
+            { 1, new List<string> {"PorkMan", "Spider"} },
+            { 2, new List<string> {"PorkMan", "Spider", "Skeleton"} },
+            { 3, new List<string> {"PorkMan", "Spider", "Skeleton", "Necromancer"} }
+        };
+
         //Methods
 
         //public static void BasicFightEncounter()
