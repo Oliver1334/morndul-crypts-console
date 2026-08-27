@@ -65,7 +65,40 @@ namespace MorndulCryptsConsole
         //    Combat.CombatLoop(porkman);
         //}
 
+        public static void RunEncounter()
+        {
+            int currentStage = Game.currentStage;
+            List<string> enemyPool = enemyPools[currentStage];
+            string chosenEnemy = enemyPool[rand.Next(0, enemyPool.Count)];
+            EnemyStatRanges ranges = enemyStatTable[currentStage][chosenEnemy];
 
+            int health = rand.Next(ranges.minHealth, ranges.maxHealth);
+            int attack = rand.Next(ranges.minAttack, ranges.maxAttack);
+            int gold = rand.Next(ranges.minGold, ranges.maxGold);
+            int xp = rand.Next(ranges.minExp, ranges.maxExp);
+
+            Enemy enemy;
+
+            switch (chosenEnemy)
+            {
+                case "PorkMan":
+                    enemy = Enemy.MakePorkMan(health, health, attack, gold, xp);
+                    break;
+                case "Spider":
+                    enemy = Enemy.MakePorkMan(health, health, attack, gold, xp);
+                    break;
+                case "Skeleton":
+                    enemy = Enemy.MakePorkMan(health, health, attack, gold, xp);
+                    break;
+                case "Necromancer":
+                    enemy = Enemy.MakePorkMan(health, health, attack, gold, xp);
+                    break;
+                default:
+                    enemy = Enemy.MakePorkMan(health, health, attack, gold, xp);
+                    break;
+            }
+
+        }
 
         public static void StageOneEncounter()
         {
