@@ -21,15 +21,11 @@ namespace MorndulCryptsConsole
             
             while (gameNotOver)
             {
-                if (Game.currentStage == 1) { Encounters.StageOneEncounter(); }
-                //else if (Game.currentStage == 2) { Encounters.StageTwoEncounter(); }
-                //else if (Game.currentStage == 3) { Encounters.StageThreeEncounter(); }
-                
+                Encounters.RunEncounter();
+
+
                 if (Game.currentPlayer.level == 5) { Game.currentStage = 2; }
                 else if (Game.currentPlayer.level == 10) { Game.currentStage = 3; }
-
-                WriteLine($"DEBUG: stage {Game.currentStage}, level {Game.currentPlayer.level}");
-                ReadKey();
             }
 
         }

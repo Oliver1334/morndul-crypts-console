@@ -31,6 +31,7 @@ namespace MorndulCryptsConsole
         public int GetLevelUpValue()
         {
             return 30 * level + 20;
+            //return 10;
         }
 
         public bool CanLevelUp()
