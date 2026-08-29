@@ -19,6 +19,9 @@ namespace MorndulCryptsConsole
             while(enemy.health > 0)
             {
                 Clear();
+                ForegroundColor = ConsoleColor.Yellow;
+                WriteLine($"Location: {Game.stageName[Game.currentStage]}");
+                ResetColor();
                 WriteLine(enemy.stageOneName);
                 Write($"ATK:{enemy.attack}  ");
                 DisplayHealth(enemy.stageOneName, enemy.health, enemy.maxHealth);
@@ -32,19 +35,19 @@ namespace MorndulCryptsConsole
                 if (Game.currentPlayer.currentClass == Player.PlayerClass.Barbarian)
                 {
                     ForegroundColor = ConsoleColor.DarkRed;
-                    WriteLine($"{Game.currentPlayer.name} the {Game.currentPlayer.currentClass}");
+                    WriteLine($"{Game.currentPlayer.name} the {Game.currentPlayer.currentClass} | Lvl({Game.currentPlayer.level})");
                     ResetColor();
                 }
                 else if (Game.currentPlayer.currentClass == Player.PlayerClass.Cleric)
                 {
                     ForegroundColor = ConsoleColor.DarkCyan;
-                    WriteLine($"{Game.currentPlayer.name} the {Game.currentPlayer.currentClass}");
+                    WriteLine($"{Game.currentPlayer.name} the {Game.currentPlayer.currentClass} | Lvl({Game.currentPlayer.level})");
                     ResetColor();
                 }
                 else if (Game.currentPlayer.currentClass == Player.PlayerClass.Thief)
                 {
                     ForegroundColor = ConsoleColor.DarkYellow;
-                    WriteLine($"{Game.currentPlayer.name} the {Game.currentPlayer.currentClass}");
+                    WriteLine($"{Game.currentPlayer.name} the {Game.currentPlayer.currentClass} | Lvl({Game.currentPlayer.level})");
                     ResetColor();
                 }
                 DisplayHealth(Game.currentPlayer.name, Game.currentPlayer.health, Game.currentPlayer.maxHealth);

@@ -10,6 +10,12 @@ namespace MorndulCryptsConsole
         //Fields
         public static Player currentPlayer = new Player();
         public static int currentStage = 1;
+        public static Dictionary<int, string> stageName = new Dictionary<int, string>
+        {
+            {1, "Stage One" },
+            {2, "Stage Two" },
+            {3, "Stage Three" }
+        };
 
         //Methods
         public void Start()
