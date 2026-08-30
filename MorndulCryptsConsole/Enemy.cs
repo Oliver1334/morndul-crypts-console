@@ -219,7 +219,7 @@ namespace MorndulCryptsConsole
         };
 
             skeleton.art = ArtAssets.PorkMan;
-            skeleton.colour = ConsoleColor.Gray;
+            skeleton.colour = ConsoleColor.DarkGray;
             skeleton.health = health;
             skeleton.maxHealth = maxHealth;
             skeleton.attack = attack;
@@ -286,8 +286,8 @@ namespace MorndulCryptsConsole
             }
         };
 
-            necromancer.art = ArtAssets.PorkMan;
-            necromancer.colour = ConsoleColor.Blue;
+            necromancer.art = ArtAssets.Necromancer3;
+            necromancer.colour = ConsoleColor.DarkBlue;
             necromancer.health = health;
             necromancer.maxHealth = maxHealth;
             necromancer.attack = attack;
@@ -295,6 +295,74 @@ namespace MorndulCryptsConsole
             necromancer.xp = xp;
 
             return necromancer;
+        }
+
+        public static Enemy MakeBoss(int health, int maxHealth, int attack, int gold, int xp)
+        {
+            Enemy boss = new Enemy();
+            boss.stageOneName = "High Necromancer";
+            boss.stageTwoName = "High Necromancer";
+            boss.stageThreeName = "High Necromancer";
+            boss.enemyType = Enemy.EnemyType.Humanoid;
+            
+            boss.combatLines = new Dictionary<string, Dictionary<string, List<string>>>
+        {
+            {  "Barbarian", new Dictionary<string, List<string>>
+                {
+                    { "IntroLines", new List<string> {"boss Barbarian IntroLine text" } },
+                    { "AttackLines", new List<string> { "boss Barbarian Attack Line one", "boss Barbarian Attack Line Two", "boss Barbarian Attack Line Three" } },
+                    { "SpecialAttackLines", new List<string> {"Special Attack Line one", "Special Attack Line Two", "Special Attack Line Three"} },
+                    { "DefendLines", new List<string> { "boss Barbarian Defend Line one" } },
+                    { "HealSuccessLines", new List<string> { "boss Barbarian Heal Success Line one" } },
+                    { "HealFailLines", new List<string> { "boss Barbarian Heal Fail Line one" } },
+                    { "RunSuccessLines", new List<string> { "boss Barbarian Run Success Line one" } },
+                    { "RunFailLines", new List<string> { "boss Barbarian Run Fail Line one" } },
+                    { "DefeatLines", new List<string> { "boss Barbarian Defeat Line one" } },
+                    { "VictoryLines", new List<string> { "boss Barbarian Victory Line one" } },
+
+                }
+            },
+            {  "Cleric", new Dictionary<string, List<string>>
+                {
+                    { "IntroLines", new List<string> { "boss Cleric IntroLine text" } },
+                    { "AttackLines", new List<string> { "boss Cleric Attack Line one", "boss Cleric Attack Line Two", "boss Cleric Attack Line Three" } },
+                    { "SpecialAttackLines", new List<string> {"Special Attack Line one", "Special Attack Line Two", "Special Attack Line Three"} },
+                    { "DefendLines", new List<string> { "boss Cleric Defend Line one" } },
+                    { "HealSuccessLines", new List<string> { "boss Cleric Heal Success Line one" } },
+                    { "HealFailLines", new List<string> { "boss Cleric Heal Fail Line one" } },
+                    { "RunSuccessLines", new List<string> { "boss Cleric Run Success Line one" } },
+                    { "RunFailLines", new List<string> { "boss Cleric Run Fail Line one" } },
+                    { "DefeatLines", new List<string> { "boss Cleric Defeat Line one" } },
+                    { "VictoryLines", new List<string> { "boss Cleric Victory Line one" } },
+
+                }
+            },
+            {  "Thief", new Dictionary<string, List<string>>
+                {
+                    { "IntroLines", new List<string> { "boss Thief IntroLine text" } },
+                    { "AttackLines", new List<string> { "boss Thief Attack Line one", "boss Thief Attack Line Two", "boss Thief Attack Line Three" } },
+                    { "SpecialAttackLines", new List<string> {"Special Attack Line one", "Special Attack Line Two", "Special Attack Line Three"} },
+                    { "DefendLines", new List<string> { "boss Thief Defend Line one" } },
+                    { "HealSuccessLines", new List<string> { "boss Thief Heal Success Line one" } },
+                    { "HealFailLines", new List<string> { "boss Thief Heal Fail Line one" } },
+                    { "RunSuccessLines", new List<string> { "boss Thief Run Success Line one" } },
+                    { "RunFailLines", new List<string> { "boss Thief Run Fail Line one" } },
+                    { "DefeatLines", new List<string> { "boss Thief Defeat Line one" } },
+                    { "VictoryLines", new List<string> { "boss Thief Victory Line one" } },
+
+                }
+            }
+        };
+
+            boss.art = ArtAssets.Necromancer3;
+            boss.colour = ConsoleColor.Red;
+            boss.health = health;
+            boss.maxHealth = maxHealth;
+            boss.attack = attack;
+            boss.gold = gold;
+            boss.xp = xp;
+
+            return boss;
         }
 
 
