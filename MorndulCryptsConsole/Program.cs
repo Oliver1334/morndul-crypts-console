@@ -21,12 +21,30 @@ namespace MorndulCryptsConsole
             
             while (gameNotOver)
             {
-                Encounters.RunEncounter();
-
-
-                if (Game.currentPlayer.level == 5) { Game.currentStage = 2; }
-                else if (Game.currentPlayer.level == 10) { Game.currentStage = 3; }
+                if (Game.currentStage == 1 && Game.currentPlayer.level == 5)
+                {
+                    Encounters.BossEncounter();
+                    Game.currentStage++;
+                } else if (Game.currentStage == 2 && Game.currentPlayer.level == 10)
+                {
+                    Encounters.BossEncounter();
+                    Game.currentStage++;
+                }
+                else if (Game.currentStage == 3 && Game.currentPlayer.level == 15)
+                {
+                    Encounters.BossEncounter();
+                    gameNotOver = false;
+                }
+                else
+                {
+                    Encounters.RunEncounter();
+                }
+                
             }
+
+            Clear();
+            WriteLine("You win! Game over.");
+            ReadKey();
 
         }
     }

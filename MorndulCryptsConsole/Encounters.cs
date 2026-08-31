@@ -46,6 +46,13 @@ namespace MorndulCryptsConsole
             }
         };
 
+        public static Dictionary<int, BossStats> bossStatTable = new Dictionary<int, BossStats>
+        {
+            {1, new BossStats(20,20,4,50,40) },
+            {2, new BossStats(30,30,6,80,60) },
+            {3, new BossStats(45,45,8,120,100) }
+        };
+
         //Methods
 
         //public static void BasicFightEncounter()
@@ -105,34 +112,18 @@ namespace MorndulCryptsConsole
 
         }
 
-        public static void StageOneEncounter()
+        public static void BossEncounter()
         {
-            int health = rand.Next(4, 8);
-            int attack = rand.Next(2, 4);
-            int gold = rand.Next(1, 6);
-            int xp = rand.Next(12, 19);
-            Enemy enemy;
+            int currentStage = Game.currentStage;
+            BossStats stats = bossStatTable[currentStage];
 
-            switch (rand.Next(0, 2))
-            {
-                case 0:
 
-                    enemy = Enemy.MakePorkMan(health, health, attack, gold, xp);
-                    break;
-                case 1:
-                    
-                    enemy = Enemy.MakeSpider(health, health, attack, gold, xp);
-                    break;
-                default:
-                    enemy = Enemy.MakePorkMan(health, health, attack, gold, xp);
-                    break;
-
-            }
-
+            Enemy enemy = Enemy.MakeBoss(stats.health, stats.maxHealth, stats.attack, stats.gold, stats.xp);
             Clear();
             WriteLine(enemy.combatLines[Game.currentPlayer.currentClass.ToString()]["IntroLines"][0]);
             ReadKey();
             Combat.CombatLoop(enemy);
+
         }
 
     }
