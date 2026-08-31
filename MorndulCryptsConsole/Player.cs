@@ -17,7 +17,7 @@ namespace MorndulCryptsConsole
         public int maxHealth = 10;
         public int damage = 1;
         public int armourValue = 0;
-        public int potion = 5;
+        public int potion = 50;
         public int weaponValue = 1;
         public int mods = 0;
 
@@ -30,8 +30,8 @@ namespace MorndulCryptsConsole
 
         public int GetLevelUpValue()
         {
-            return 30 * level + 20;
-            //return 10;
+            //return 30 * level + 20;
+            return 30;
         }
 
         public bool CanLevelUp()
